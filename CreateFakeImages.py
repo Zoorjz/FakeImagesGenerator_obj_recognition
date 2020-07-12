@@ -20,7 +20,7 @@ obj_floder_1 = [
     "img/sourse_png/DualShock",
 "img/sourse_png/minolta",
 "img/sourse_png/Zenit_122",
-] # ---------------------------- Folders where contains images of each class
+] # ---------------------------- Folders with images. Each folder is a different class
 
 Count_images_for_each_class = [
     100,100,100
@@ -28,9 +28,9 @@ Count_images_for_each_class = [
 
 backgr_folder = [
     "img/backgrounds/"
-]   # ---------------------------------- Folders where contains backgrounds
+]   # ---------------------------------- Folders with backgrounds
 
-Count_of_mixed_images = 200 # ----------------------------How much do you want images with many objects
+Count_of_mixed_images = 200 # ----------------------------Amounts of images with many objects
 
 Name_files = "DataSet_v1_" # ------------------------------- Name of output images and annotations
 
