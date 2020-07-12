@@ -24,7 +24,7 @@ obj_floder_1 = [
 
 Count_images_for_each_class = [
     100,100,100
-] # ----------------------------How much do you want images of each classes
+] # ----------------------------How much  images of each class do you want
 
 backgr_folder = [
     "img/backgrounds/"
