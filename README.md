@@ -1,4 +1,4 @@
-## Fake Images Generator for objekt recognition 
+## Fake Images Generator for objects recognition 
 
 This is a generator for creating fake images, as well as marking them. 
 Ready-made description files are created in YOLO format.
@@ -6,7 +6,7 @@ Ready-made description files are created in YOLO format.
 # For what?
 If you need a large dataset of images of a certain object but there are no already marked-up images in open access, you can create your own dataset using this generator.
 
-Just make a video with the objekt on the greenscreen and remove green background from each frame (in any video editor). Then ise this tool do make iamges and annotations files.
+Just make a video with the objects on the greenscreen and remove green background from each frame (in any video editor). Then ise this tool do make iamges and annotations files.
 
 
 ![GitHub Logo](img/img1.jpg)
@@ -26,7 +26,7 @@ Just make a video with the objekt on the greenscreen and remove green background
 
   1.Install numpy, cv2, tqdm, matplotlib and PIL.
   
-  2.Add in folders images of objekts. (different folders - different classes)
+  2.Add in folders images of objects. (different folders - different classes)
   
   3.Add backgrounds in folder
   
