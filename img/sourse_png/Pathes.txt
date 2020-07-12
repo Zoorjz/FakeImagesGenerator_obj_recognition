@@ -1,0 +1,3 @@
+"C:\\DeepLearning\\DataBase\\heartstone\\cards\\Final\\Folders\\DualShock",
+"C:\\DeepLearning\\DataBase\\heartstone\\cards\\Final\\Folders\\minolta",
+"C:\\DeepLearning\\DataBase\\heartstone\\cards\\Final\\Folders\\Zenit_122",
