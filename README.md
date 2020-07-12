@@ -14,17 +14,22 @@ Just make a video with the objekt on the greenscreen and remove green background
 
 # Input files
   1. Masked image of an object in PNG format
+  
   2. Background image (jpg/png)
 
 # Output files
   1. Fake image. Сombination of two inputs
+  
   2. Text description file in YOLO format. 
   
 # Usage
 
   1.Install numpy, cv2, tqdm, matplotlib and PIL.
+  
   2.Add in folders images of objekts. (different folders - different classes)
+  
   3.Add backgrounds 
+  
   4.Run CreateFakeImages.py
  
  
