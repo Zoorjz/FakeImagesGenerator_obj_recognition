@@ -1,7 +1,6 @@
 # FakeImagesGenerator_obj_recognition
 
-This is a Generator for making fake images and also labeling them.
-Ready-made description files in the format YOLO 
-
+This is a generator for creating fake images, as well as marking them. 
+Ready-made description files are created in YOLO format
 
 
