@@ -28,7 +28,7 @@ Just make a video with the objekt on the greenscreen and remove green background
   
   2.Add in folders images of objekts. (different folders - different classes)
   
-  3.Add backgrounds 
+  3.Add backgrounds in folder
   
   4.Run CreateFakeImages.py
  
