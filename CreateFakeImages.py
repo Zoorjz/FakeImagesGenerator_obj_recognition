@@ -30,7 +30,7 @@ backgr_folder = [
     "img/backgrounds/"
 ]   # ---------------------------------- Folders with backgrounds
 
-Count_of_mixed_images = 200 # ----------------------------Amounts of images with many objects
+Count_of_mixed_images = 200 # ----------------------------Amounts of images with a lot of objects
 
 Name_files = "DataSet_v1_" # ------------------------------- Name of output images and annotations
 
