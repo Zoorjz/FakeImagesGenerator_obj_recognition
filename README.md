@@ -20,7 +20,7 @@ Just make a video with the objekt on the greenscreen and remove green background
   1. Fake image. Сombination of two inputs
   2. Text description file in YOLO format. 
   
-#Usage
+# Usage
 
   1.Install numpy, cv2, tqdm, matplotlib and PIL.
   2.Add in folders images of objekts. (different folders - different classes)
@@ -28,7 +28,7 @@ Just make a video with the objekt on the greenscreen and remove green background
   4.Run CreateFakeImages.py
  
  
- #What still needs to be done:
+ # What still needs to be done:
   1. Automatic removal of green background. (it is not easy because it is difficult to make a good and stable chromakey)
   2. Make better color correction.
   3. Make it faster))) 
