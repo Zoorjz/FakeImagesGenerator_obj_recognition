@@ -34,9 +34,9 @@ Count_of_mixed_images = 200 # ----------------------------Amounts of images with
 
 Name_files = "DataSet_v1_" # ------------------------------- Name of output images and annotations
 
-add_filters = False  # --------------------------------- if you want also change  Colors, color temperature... Don't recommend.
+add_filters = False  # --------------------------------- if you want to change colors or color temperature... Don't recommend.
 
-add_MotionBlur = -1 # From -1 to 10  (if 3 then 30% chance make Blur for each image) (-1 = off)
+add_MotionBlur = -1 # From -1 to 10  (if 3 then 30% chance of making Blur for each image) (-1 = off)
 
 angle_rotat = 4 # angle of rotation
 
@@ -44,7 +44,7 @@ Size_range_from = 4    # for example:    2.3 ---------->   Original_size_img / 2
 Size_range_to = 5
 
 if len(obj_floder_1) != len(Count_images_for_each_class):
-    print("Count of folders and count of classes it not the same:" + str(len(obj_floder_1) )+"  "+ str(len(Count_images_for_each_class)))
+    print("Count of folders and count of classes is not the same:" + str(len(obj_floder_1) )+"  "+ str(len(Count_images_for_each_class)))
     exit()
 
 
@@ -129,7 +129,7 @@ def watermark_with_transparency(input_image_path, output_image_path, watermark_i
 def MoutionBlur(inp_img):
     rnd_blr = random.randint(1, 200)
     size = rnd_blr
-    # size = 0 - нельзя ноль здеся
+    # size = 0 
     # print(str(n) + " - Got Blur")
     # generating the kernel
     if bool(random.getrandbits(1)):
@@ -158,7 +158,7 @@ def obj_rotate(input_image_path):
             rand_angle = random.uniform(-1 * angle_rotat, angle_rotat)
         else:
             break
-    img = img.rotate(rand_angle, expand=True) # angle of rotat
+    img = img.rotate(rand_angle, expand=True) # angle of rotatation
 
     IMG_width_A, IMG_height_A = img.size
 
@@ -237,7 +237,7 @@ def CreateImgAndBoundBox (bg, img):
         img = MoutionBlur(img)
         t_blur = time.perf_counter()
     else:
-        t_blur = "без блюра"
+        t_blur = "without Blur"
     bg = cv2.cvtColor(bg, cv2.COLOR_BGRA2RGBA)
     img = cv2.cvtColor(img, cv2.COLOR_BGRA2RGBA)
     bg = Image.fromarray(bg)
@@ -362,7 +362,7 @@ for calss_i in Count_images_for_each_class:
 
             bg_height, bg_width, bg_depth = bg.shape
 
-            # -----------------------------------------------------Инициализация переменных для нахождения объекта
+         
 
             t_load_img = time.perf_counter()
 
@@ -434,7 +434,7 @@ for mix_img in range(0, Count_of_mixed_images):
             img = cv2.imread(img_fn, cv2.IMREAD_UNCHANGED)
             height, width, depth = img.shape
 
-            # -----------------------------------------------------Инициализация переменных для нахождения объекта
+           
 
             t_load_img = time.perf_counter()
 
