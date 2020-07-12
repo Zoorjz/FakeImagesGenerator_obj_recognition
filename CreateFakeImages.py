@@ -11,25 +11,23 @@ import matplotlib.image as mpimg
 import matplotlib.patches as patches
 import matplotlib as mpl
 from glob import glob
-from shapely.geometry import Polygon
 from PIL import Image, ImageDraw, ImageColor
 
-annotations_dir = "test/" # ---------- dir for new annotations
-images_dir = "test/" # ---------- dir for new Images
+annotations_dir = "img/Results/" # ---------- dir for new annotations
+images_dir = "img/Results/" # ---------- dir for new Images
 
 obj_floder_1 = [
-    "C:\\DeepLearning\\DataBase\\heartstone\\cards\\Final\\Folders\\DualShock",
-    "C:\\DeepLearning\\DataBase\\heartstone\\cards\\Final\\Folders\\minolta",
-    "C:\\DeepLearning\\DataBase\\heartstone\\cards\\Final\\Folders\\Zenit_122",
-
+    "img/sourse_png/DualShock",
+"img/sourse_png/minolta",
+"img/sourse_png/Zenit_122",
 ] # ---------------------------- Folders where contains images of each class
 
 Count_images_for_each_class = [
-    10,10,10
+    100,100,100
 ] # ----------------------------How much do you want images of each classes
 
 backgr_folder = [
-    "X:\imaes_for_CNN\challenge2018"
+    "img/backgrounds/"
 ]   # ---------------------------------- Folders where contains backgrounds
 
 Count_of_mixed_images = 200 # ----------------------------How much do you want images with many objects
@@ -42,8 +40,8 @@ add_MotionBlur = -1 # From -1 to 10  (if 3 then 30% chance make Blur for each im
 
 angle_rotat = 4 # angle of rotation
 
-Size_range_from = 1.5    # for example:    2.3 ---------->   Original_size_img / 2.3  = size obj_img
-Size_range_to = 3
+Size_range_from = 4    # for example:    2.3 ---------->   Original_size_img / 2.3  = size obj_img
+Size_range_to = 5
 
 if len(obj_floder_1) != len(Count_images_for_each_class):
     print("Count of folders and count of classes it not the same:" + str(len(obj_floder_1) )+"  "+ str(len(Count_images_for_each_class)))
@@ -86,32 +84,6 @@ c_maps = [
 ] # ---------------- filters for color change
 
 count = 0
-
-def display_img(img, polygons=[], channels="bgr", size=9):
-    """
-        Function to display an inline image, and draw optional polygons (bounding boxes, convex hulls) on it.
-        Use the param 'channels' to specify the order of the channels ("bgr" for an image coming from OpenCV world)
-    """
-    if not isinstance(polygons, list):
-        polygons = [polygons]
-    if channels == "bgr":  # bgr (cv2 image)
-        nb_channels = img.shape[2]
-        if nb_channels == 4:
-            img = cv2.cvtColor(img, cv2.COLOR_BGRA2RGBA)
-        else:
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    fig, ax = plt.subplots(figsize=(size, size))
-    ax.set_facecolor((0, 0, 0))
-    ax.imshow(img)
-    for polygon in polygons:
-        # An polygon has either shape (n,2),
-        # either (n,1,2) if it is a cv2 contour (like convex hull).
-        # In the latter case, reshape in (n,2)
-        if len(polygon.shape) == 3:
-            polygon = polygon.reshape(-1, 2)
-        patch = patches.Polygon(polygon, linewidth=1, edgecolor='g', facecolor='none')
-        ax.add_patch(patch)
-
 
 def randomVec():
     randomVector = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), 255)
@@ -380,7 +352,8 @@ for calss_i in Count_images_for_each_class:
             img_fn = random.choice(imgs_fns[num_of_obj])
             img = cv2.imread(img_fn, cv2.IMREAD_UNCHANGED)
             height, width, depth = img.shape
-
+            r = 100 / float(width)
+            cv2.resize(img, (100, int(height * r)), interpolation=cv2.INTER_AREA)
 
 
             backgr_name = random.choice(random.choice(backgr_fns))
